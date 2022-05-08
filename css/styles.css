@@ -1,0 +1,908 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap");
+
+:root {
+	--primary-color: #ff9c00;
+	--secondary-color: #072753;
+	--secondary-color-light: #28384e;
+	--secondary-color-light-2: #1b498a;
+}
+
+@keyframes top-to-bottom {
+	from {
+		opacity: 0;
+		transform: translateY(-7rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0rem);
+	}
+}
+
+@keyframes left-to-right {
+	from {
+		opacity: 0;
+		transform: translateX(-4rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes right-to-left {
+	from {
+		opacity: 0;
+		transform: translateX(4rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes bottom-to-top {
+	from {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 10px;
+	font-family: "Arimo", sans-serif;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	outline: none;
+	text-decoration: none;
+}
+
+nav,
+header > div {
+	margin: 0 auto;
+	max-width: 1440px;
+	padding: 0 4rem;
+}
+
+section#services,
+section.two-column-section > div,
+section#projects > div,
+section#testimonials,
+footer > div {
+	margin: 0 auto;
+	max-width: 1440px;
+	padding: 10rem 4rem;
+}
+
+/* Utilities */
+.btn,
+a.btn:link {
+	display: inline-block;
+	color: white;
+	font-size: 1.5rem;
+	padding: 1rem 2rem;
+	border-radius: 0.5rem;
+	background-color: var(--primary-color);
+	transition: transform 250ms ease-in-out;
+	font-weight: 600;
+}
+
+input[type="submit"].btn,
+input[type="submit"].btn:hover,
+input[type="submit"].btn:focus {
+	outline: none;
+	border: none;
+}
+
+input[type="submit"].btn:hover {
+	cursor: pointer;
+}
+
+a.btn:hover,
+a.btn:focus,
+a.btn:active {
+	transform: scale(1.05);
+}
+
+/* Navbar */
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 7rem;
+	animation: top-to-bottom 1s ease-in-out;
+}
+
+nav > a:first-of-type {
+	transition: transform 250ms ease-in-out;
+}
+
+nav > a:first-of-type:hover,
+nav > a:first-of-type:focus,
+nav > a:first-of-type:active {
+	transform: scale(1.05);
+}
+
+nav > ul {
+	display: flex;
+	gap: 4rem;
+}
+
+nav > ul > li > a,
+nav > ul > li > a:link {
+	font-size: 1.5rem;
+	color: white;
+}
+
+nav > ul > li > a:hover,
+nav > ul > li > a:focus,
+nav > ul > li > a:active {
+	color: var(--primary-color);
+	transition: color 250ms ease-in-out;
+}
+
+nav > div:nth-of-type(2),
+nav > div:last-of-type {
+	display: none;
+}
+
+/* Header */
+header {
+	height: 100vh;
+	background: url("../images/header-background.svg") center center / cover no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header > div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15rem;
+}
+
+header > div > div {
+	color: white;
+	animation: left-to-right 1s ease-in-out;
+}
+
+header > div > div > h1 {
+	font-size: 5rem;
+	line-height: 7rem;
+	margin-bottom: 2rem;
+	font-weight: 700;
+}
+
+header > div > div > p {
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	margin-bottom: 3rem;
+}
+
+header > div > img {
+	display: block;
+	width: 40%;
+	animation: right-to-left 1s ease-in-out;
+}
+
+/* Services */
+section#services > h2 {
+	font-size: 3rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--secondary-color);
+	opacity: 0;
+}
+
+section#services > p {
+	font-size: 1.5rem;
+	color: var(--secondary-color-light);
+	margin-bottom: 10rem;
+	opacity: 0;
+}
+
+section#services > h2,
+section#services > p {
+	text-align: center;
+}
+
+section#services > h2.animate,
+section#services > p.animate {
+	animation: fade-in 1s ease-in-out forwards;
+}
+
+section#services > div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10rem;
+}
+
+section#services > div > div {
+	opacity: 0;
+}
+
+section#services > div > div.animate {
+	animation: bottom-to-top 1s ease-in-out forwards;
+}
+
+section#services > div > div > img {
+	margin-bottom: 2rem;
+}
+
+section#services > div > div > h3 {
+	font-size: 2rem;
+	color: var(--secondary-color);
+	margin-bottom: 1rem;
+	font-weight: 500;
+}
+
+section#services > div > div > p {
+	color: var(--secondary-color-light);
+	margin-bottom: 2rem;
+}
+
+section#services > div > div > p,
+section#services > div > div > a {
+	font-size: 1.5rem;
+}
+
+section#services > div > div > a,
+section#services > div > div > a:link {
+	color: var(--secondary-color-light-2);
+	font-weight: 500;
+}
+
+/* Two Grid Section */
+section.two-column-section {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+section.two-column-section > div {
+	display: flex;
+	justify-self: center;
+	align-content: space-between;
+	gap: 20rem;
+}
+
+section.two-column-section > div > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: space-between;
+}
+
+section.two-column-section > div > div > h2 {
+	font-weight: 700;
+	font-size: 4rem;
+	color: var(--secondary-color);
+	margin-bottom: 2rem;
+}
+
+section.two-column-section > div > div > p {
+	font-size: 1.5rem;
+	color: var(--secondary-color-light);
+}
+
+section.two-column-section > div > div > p:first-of-type {
+	margin-bottom: 2rem;
+}
+
+section.two-column-section > div > div > p:last-of-type {
+	margin-bottom: 3rem;
+}
+
+section.two-column-section > div > img {
+	display: block;
+	object-fit: contain;
+	max-width: 40%;
+}
+
+/* Help */
+section#help {
+	background: url("../images/help-section-background.jpg") center center / cover no-repeat;
+}
+
+section#help > div > div {
+	opacity: 0;
+}
+
+section#help > div > div.animate {
+	animation: left-to-right 1s ease-in-out forwards;
+}
+
+section#help > div > img {
+	opacity: 0;
+}
+
+section#help > div > img.animate {
+	animation: right-to-left 1s ease-in-out forwards;
+}
+
+/* Work with us */
+section#work-with-us > div > div > form {
+	position: relative;
+}
+
+section#work-with-us > div > img {
+	opacity: 0;
+}
+
+section#work-with-us > div > img.animate {
+	animation: left-to-right 1s ease-in-out forwards;
+}
+
+section#work-with-us > div > div {
+	opacity: 0;
+}
+
+section#work-with-us > div > div.animate {
+	animation: right-to-left 1s ease-in-out forwards;
+}
+
+section#work-with-us > div > div > form > input[type="email"] {
+	border: 1px solid #ede5d9;
+	background: #faf9f7;
+	font-size: 1.5rem;
+	padding: 1.5rem 2rem;
+	width: 40rem;
+}
+
+section#work-with-us > div > div > form > input[type="email"]:focus {
+	outline: none;
+	border: 1px solid #ede5d9;
+}
+
+section#work-with-us > div > div > form > input[type="submit"] {
+	position: absolute;
+	left: 32rem;
+	top: 0.5rem;
+	bottom: 0.5rem;
+}
+
+/* Projects */
+section#projects {
+	background: linear-gradient(rgba(109, 187, 217, 0.9), rgba(26, 71, 137, 0.9)),
+		url("../images/projects-section-background.jpg") center center / cover no-repeat;
+}
+
+section#projects > div {
+	padding: 10rem 8rem;
+}
+
+section#projects > div > h2 {
+	font-size: 4rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+
+section#projects > div > p {
+	font-size: 1.5rem;
+	margin-bottom: 10rem;
+}
+
+section#projects > div > h2,
+section#projects > div > p {
+	text-align: center;
+	color: white;
+	opacity: 0;
+}
+
+section#projects > div > h2.animate,
+section#projects > div > p.animate {
+	animation: fade-in 1s ease-in-out forwards;
+}
+
+section#projects > div > div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 3rem;
+	justify-items: center;
+}
+
+section#projects > div > div > div {
+	opacity: 0;
+}
+
+section#projects > div > div > div.animate {
+	animation: bottom-to-top 1s ease-in-out forwards;
+}
+
+section#projects > div > div > div > img {
+	display: block;
+	max-width: 100%;
+	margin-bottom: 2rem;
+}
+
+section#projects > div > div > div > h3 {
+	font-size: 2rem;
+	color: white;
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+
+section#projects > div > div > div > p {
+	font-size: 1.5rem;
+	color: white;
+	margin-bottom: 2rem;
+}
+
+section#projects > div > div > div > a {
+	color: var(--primary-color);
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+/* Testimonials */
+section#testimonials {
+	padding: 10rem 20rem;
+}
+
+section#testimonials > div:first-of-type {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	gap: 4rem;
+	margin-bottom: 10rem;
+}
+
+section#testimonials > div:first-of-type::before {
+	content: "";
+	background: url("../images/icons/testimonial-icon.svg") center center / cover no-repeat;
+	position: absolute;
+	top: -2rem;
+	left: -6rem;
+	width: 10rem;
+	height: 10rem;
+}
+
+section#testimonials > div:first-of-type > img {
+	display: block;
+	max-width: 100%;
+	z-index: 1;
+	opacity: 0;
+}
+
+section#testimonials > div:first-of-type > div {
+	opacity: 0;
+}
+
+section#testimonials > div:first-of-type > img.animate {
+	animation: left-to-right 1s ease-in-out forwards;
+}
+
+section#testimonials > div:first-of-type > div.animate {
+	animation: right-to-left 1s ease-in-out forwards;
+}
+
+section#testimonials > div:first-of-type > div > h3 {
+	font-size: 2rem;
+	font-weight: 500;
+	color: var(--secondary-color);
+	margin-bottom: 1rem;
+}
+
+section#testimonials > div:first-of-type > div > p {
+	font-size: 1.5rem;
+	color: var(--secondary-color-light);
+}
+
+section#testimonials > div:first-of-type > div > p:first-of-type {
+	font-size: 1.5rem;
+	margin-bottom: 2rem;
+}
+
+section#testimonials > div:first-of-type > div > p:last-of-type {
+	margin-bottom: 2rem;
+}
+
+section#testimonials > div:first-of-type > div > div {
+	display: flex;
+	gap: 2rem;
+}
+
+section#testimonials > div:last-of-type {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10rem;
+}
+
+section#testimonials > div:last-of-type > img {
+	display: block;
+	max-width: 100%;
+	opacity: 0;
+}
+
+section#testimonials > div:last-of-type > img.animate {
+	animation: bottom-to-top 1s ease-in-out forwards;
+}
+
+/* Footer */
+footer {
+	background: linear-gradient(rgba(1, 16, 33, 0.99), rgba(1, 16, 33, 0.99)),
+		url("../images/footer-background-image.jpg") center center / cover no-repeat;
+}
+
+footer > div {
+	padding: 10rem 20rem;
+}
+
+footer > div > div:first-of-type {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr 1fr;
+	margin-bottom: 10rem;
+	gap: 4rem;
+}
+
+footer > div > div:first-of-type > div {
+	opacity: 0;
+}
+
+footer > div > div:first-of-type > div:first-of-type.animate {
+	animation: left-to-right 1s ease-in-out forwards;
+}
+
+footer > div > div:first-of-type > div:nth-of-type(2).animate,
+footer > div > div:first-of-type > div:nth-of-type(3).animate,
+footer > div > div:first-of-type > div:last-of-type.animate {
+	animation: right-to-left 1s ease-in-out forwards;
+}
+
+footer > div > div:first-of-type > div:first-of-type > img {
+	margin-bottom: 2rem;
+}
+
+footer > div > div:first-of-type > div:first-of-type > p {
+	color: #a9b2bc;
+	font-size: 1.5rem;
+	margin-bottom: 4rem;
+}
+
+footer > div > div:first-of-type > div:first-of-type > form > label {
+	display: block;
+	color: white;
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+
+footer > div > div:first-of-type > div:first-of-type > form > div {
+	display: flex;
+	align-items: stretch;
+	gap: 0;
+}
+
+footer > div > div:first-of-type > div:first-of-type > form > div > input[type="email"] {
+	border: none;
+	outline: none;
+	background: white;
+	padding: 0 2rem;
+	border-radius: 0.5rem 0 0 0.5rem;
+	font-size: 1.5rem;
+	height: 6rem;
+	width: 30rem;
+	display: inline-block;
+}
+
+footer > div > div:first-of-type > div:first-of-type > form > div > input[type="email"]:focus {
+	border: none;
+	outline: none;
+}
+
+footer > div > div:first-of-type > div:first-of-type > form > div > input[type="submit"] {
+	background: var(--secondary-color-light-2);
+	font-size: 1.4rem;
+	border-radius: 0 0.5rem 0.5rem 0;
+	border: none;
+	padding: 0 2rem;
+	display: inline-block;
+}
+
+footer > div > div:first-of-type > div:nth-of-type(2) > h3,
+footer > div > div:first-of-type > div:nth-of-type(3) > h3,
+footer > div > div:first-of-type > div:last-of-type > h3 {
+	font-size: 2rem;
+	font-weight: 700;
+	color: white;
+	margin-bottom: 3rem;
+}
+
+footer > div > div:first-of-type > div:nth-of-type(2) > ul,
+footer > div > div:first-of-type > div:nth-of-type(3) > ul,
+footer > div > div:first-of-type > div:last-of-type > ul {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+footer > div > div:first-of-type > div:nth-of-type(2) > ul > li > a,
+footer > div > div:first-of-type > div:nth-of-type(2) > ul > li > a:link,
+footer > div > div:first-of-type > div:nth-of-type(3) > ul > li > a,
+footer > div > div:first-of-type > div:nth-of-type(3) > ul > li > a:link,
+footer > div > div:first-of-type > div:last-of-type > ul > li > a,
+footer > div > div:first-of-type > div:last-of-type > ul > li > a:link {
+	font-size: 1.5rem;
+	color: #a9b2bc;
+}
+
+footer > div > hr {
+	opacity: 0.1;
+	margin-bottom: 3rem;
+}
+
+footer > div > div:last-of-type {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	opacity: 0;
+}
+
+footer > div > div:last-of-type.animate {
+	animation: bottom-to-top 1s ease-in-out forwards;
+}
+
+footer > div > div:last-of-type > ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+footer > div > div:last-of-type > ul:first-of-type > li > a,
+footer > div > div:last-of-type > ul:first-of-type > li > a:link {
+	color: #a9b2bc;
+	font-size: 1.5rem;
+}
+
+footer > div > div:last-of-type > p {
+	color: #a9b2bc;
+	font-size: 1.5rem;
+}
+
+footer > div > div:last-of-type > p > a,
+footer > div > div:last-of-type > p > a:link {
+	color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 1366px) {
+	html {
+		font-size: 8px;
+	}
+
+	nav {
+		padding-top: 2rem;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	html {
+		font-size: 8px;
+	}
+
+	section.two-column-section > div {
+		gap: 10rem;
+	}
+
+	section#projects > div {
+		padding: 10rem 4rem;
+	}
+
+	section#testimonials {
+		padding: 10rem 4rem;
+	}
+
+	section#testimonials > div:first-of-type::before {
+		left: -3rem;
+	}
+
+	section#testimonials > div:first-of-type > img {
+		max-width: 60%;
+	}
+
+	footer > div {
+		padding: 10rem 4rem;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	header > div > div {
+		animation: bottom-to-top 1s ease-in-out;
+	}
+
+	header > div > img {
+		display: none;
+	}
+
+	header > div > div > h1,
+	header > div > div > p {
+		text-align: center;
+	}
+
+	header > div > div > h1 {
+		font-size: 4rem;
+		line-height: 5rem;
+	}
+
+	header > div > div > div {
+		display: flex;
+		justify-content: center;
+	}
+
+	nav > a:first-of-type {
+		z-index: 2;
+	}
+
+	nav > a:first-of-type > img {
+		width: 80%;
+	}
+
+	nav > ul,
+	nav > a.btn:last-of-type {
+		display: none;
+	}
+
+	nav > div:nth-of-type(2),
+	nav > div:last-of-type {
+		display: block;
+		color: white;
+		font-size: 3rem;
+	}
+
+	nav > div:last-of-type {
+		z-index: 2;
+	}
+
+	nav > ul.open {
+		z-index: 1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100vh;
+		background: var(--secondary-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 8rem;
+	}
+
+	nav > ul.open > li > a {
+		font-size: 3rem;
+	}
+
+	nav > div:last-of-type {
+		display: none;
+	}
+
+	nav > div:first-of-type {
+		display: none;
+	}
+
+	nav > div:first-of-type.open {
+		display: flex;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 88vh;
+		justify-content: center;
+		z-index: 2;
+	}
+
+	nav > div:first-of-type.open > a {
+		font-size: 2rem;
+	}
+
+	nav > div:nth-of-type(2).open {
+		display: none;
+	}
+
+	nav > div:last-of-type.open {
+		display: block;
+	}
+
+	section#services > div {
+		grid-template-columns: 1fr;
+	}
+
+	section.two-column-section > div {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	section.two-column-section > div > img {
+		max-width: 80%;
+	}
+
+	section#work-with-us > div > img {
+		order: 2;
+	}
+
+	section#work-with-us > div > div > form > input[type="email"] {
+		width: 30rem;
+	}
+
+	section#work-with-us > div > div > form > input[type="submit"] {
+		left: 22rem;
+	}
+
+	section#projects > div > div {
+		grid-template-columns: 1fr;
+		gap: 6rem;
+	}
+
+	section#testimonials > div:first-of-type {
+		flex-direction: column;
+	}
+
+	section#testimonials > div:first-of-type > img {
+		max-width: 100%;
+	}
+
+	section#testimonials > div:last-of-type {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	footer > div > div:first-of-type {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: 2rem;
+	}
+
+	footer > div > div:first-of-type > div:first-of-type.animate {
+		animation: bottom-to-top 1s ease-in-out forwards;
+	}
+
+	footer > div > div:first-of-type > div:nth-of-type(2).animate,
+	footer > div > div:first-of-type > div:nth-of-type(3).animate,
+	footer > div > div:first-of-type > div:last-of-type.animate {
+		animation: bottom-to-top 1s ease-in-out forwards;
+	}
+
+	footer > div > div:first-of-type > div:first-of-type {
+		grid-column: 1 / 4;
+		grid-row: 1 / 2;
+	}
+
+	footer > div > div:last-of-type {
+		grid-template-columns: 1fr;
+		text-align: center;
+		gap: 3rem;
+	}
+}
